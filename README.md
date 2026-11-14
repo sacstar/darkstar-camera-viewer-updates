@@ -20,12 +20,12 @@ The initial recovery package is based on the stable v0.5.1 camera source, with t
 
 ## Release channel
 
-The main v0.6.1 build uses versionCode 15. Its recovery build uses versionCode 16 and restores v0.6.0 camera code. The v1.0.0-rc.1 production candidate reserves versionCode 17 and recovery code 18. Future main releases must use versionCode 19 or higher and reserve a higher code for their recovery package. Only repository maintainers can publish releases. Users receive update files; they do not gain publishing access.
+The main v0.6.1 build uses versionCode 15. Its recovery build uses versionCode 16 and restores v0.6.0 camera code. The v1.0.0-rc.2 production candidate reserves versionCode 19 and recovery code 20. Future main releases must use versionCode 21 or higher and reserve a higher code for their recovery package. Only repository maintainers can publish releases. Users receive update files; they do not gain publishing access.
 
 This is private-distribution Android software hosted through a public release repository, not a Google Play listing. The APKs are publicly downloadable. Camera access still requires the user's own Blue Iris server address, account and network access.
 
 ## Private production candidate
 
-v1.0.0-rc.1 is a non-debuggable release build for private GitHub/OneDrive distribution. It retains the existing signing identity for in-place upgrades and adds unique backup filenames. Its higher-code recovery restores the v0.6.1 camera source.
+v1.0.0-rc.2 is a non-debuggable release build for private GitHub/OneDrive distribution. It retains the existing signing identity for in-place upgrades and includes unique backup filenames plus a circular PTZ pad. PTZ controls and movement requests require explicit per-camera Blue Iris PTZ support; fixed, unknown-capability and disabled cameras are excluded. Its higher-code recovery restores the previous rc.1 camera source.
 
 Candidates are marked as pre-releases and do not advance the stable update feed. Physical phone, all-site and extended-use acceptance are required before promotion. Google Play publication is not part of this distribution path.
