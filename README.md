@@ -46,7 +46,7 @@ Then choose Check for updates, Download update and Install update. Keep the exis
 
 ## PWA with draggable camera layouts
 
-[PWA v0.7.1 package and instructions](pwa/README.md) includes mouse/touch camera rearrangement, a visual custom-layout editor, named copies and saved camera order/grid sizes. This is a Windows local-gateway PWA; the ZIP includes source and built files. Preserve the existing PWA `.local` vault when updating.
+[PWA v0.8.0-rc.1 package and instructions](pwa/README.md) includes mouse/touch camera rearrangement, a visual custom-layout editor, named copies and saved camera order/grid sizes. This is a Windows local-gateway PWA; the ZIP includes source and built files. Preserve the existing PWA `.local` vault when updating.
 
 PWA v0.6.1 also fixes startup detection and the Windows Stop shortcut for gateway version 0.6 and later.
 
@@ -57,3 +57,5 @@ PWA v0.7.1 adds a persistent version badge and an interactive gateway repair/upd
 ## Windows operations preview and automatic updates
 
 [Windows preview package and instructions](desktop/README.md) includes the Ops Center, Admin pages, latest clips rail, health/technician reports and startup GitHub updates. The Windows build workflow publishes its own installer/manifest and performs an online updater download check. Windows tags do not replace the Android stable feed.
+
+PWA 0.8.0-rc.1 preview shares the fixed viewport, Ops Center/Admin pages, clips rail and health/report features with the Windows preview. See pwa/README.md for its update steps and verification limits.

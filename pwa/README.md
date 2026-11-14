@@ -1,15 +1,13 @@
-# Darkstar Camera Viewer PWA v0.7.1
+# Darkstar Camera Viewer PWA 0.8.0-rc.1 preview
 
-[Download PWA v0.7.1](https://github.com/sacstar/darkstar-camera-viewer-updates/raw/refs/heads/main/pwa/DarkstarCameraViewer-PWA-v0.7.1.zip)
+[Download PWA 0.8.0-rc.1](https://github.com/sacstar/darkstar-camera-viewer-updates/raw/refs/heads/main/pwa/DarkstarCameraViewer-PWA-v0.8.0-rc.1.zip)
 
-The app header and camera-wall toolbar now show the version. The launcher detects an older running gateway and directs you to Repair-Darkstar.cmd rather than silently opening old features.
+The page and camera controls stay fixed while only the camera grid scrolls. This preview also adds Ops Center and Admin navigation, latest motion/person clips with event-time playback, system health where Blue Iris supplies it, outage counts, technician HTML reports and private diagnostic JSON. It retains groups, large layouts, independent monitor windows and encrypted settings transfer.
 
-Extract the complete new ZIP into a separate folder. Run Repair-Darkstar.cmd there, choose Update an existing PWA folder, and select your original app folder. It makes a dated encrypted-vault backup, replaces app files and restarts the gateway while preserving saved sites, groups and layouts. Alternatively choose Restart this folder. Unrelated services are not stopped. Refresh the browser after repair.
+Extract the complete new ZIP to a separate folder. Run Repair-Darkstar.cmd there, choose Update an existing PWA folder and select your original app folder. The repair tool backs up and preserves the encrypted vault. Refresh existing browser windows after repair. Never delete .local as part of an upgrade.
 
-Retains the Darkstar Technical logo, layouts with up to 1,000 cameras, 64/81/100/144-pane grids, named cross-site groups, drag ordering and independent monitor windows with auto-fit and camera-wall mode. Groups are included in encrypted settings backups. Optional browser monitor placement requires permission; manual placement remains available. The Windows software edition can use native monitor discovery.
+Validation: 46 automated gateway/protocol/storage tests; browser fixture checks across 100 grid/sizing/display combinations, fixed controls, event playback timestamp, health page, report privacy and confirmed server camera rename. Real host reboots/updates, physical mixed-DPI/multi-monitor and prolonged real-site qualification remain pending. Camera states are server-reported; unknown telemetry stays unknown. Fleet version comparison is not a vendor-latest check. Remote administrative actions require exact-site confirmation and are submitted once; an uncertain result is never replayed automatically.
 
-Validation: 43 automated tests passed; browser checks passed for visible version, 120-camera layouts/groups, reload persistence, independent monitor windows, fullscreen and permission fallback. An actual running v0.6.1 gateway was upgraded to v0.7.1; the encrypted vault stayed byte-for-byte unchanged and its saved group remained readable. Repair rejected an unrelated local HTTP service without stopping it. These checks used isolated test settings. Physical multi-monitor/DPI qualification and prolonged real-site testing remain pending.
+The Windows software edition has its own startup GitHub updater and installer: [Windows download and instructions](../desktop/README.md). This PWA ZIP still uses the launcher/repair update path. Matrix profiles, incident notebooks and AI analysis remain unfinished. This is a preview, not a production-qualified release.
 
-The expanded operations/health dashboard and administration features remain under development and are not included in this package. This is a Windows local-gateway PWA, not a hosted public dashboard. No private settings or camera credentials are included.
-
-SHA256: c4f695a2f4b6fc6f6d977f9e803dffe8b057864a85842756ba66d47254d9ccea
+SHA256: 0d76bbfcad8bf51122cd4443ee327815ac8811faa030d44f69c9ec797ba45f97
