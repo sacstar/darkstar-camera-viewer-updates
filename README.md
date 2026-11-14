@@ -42,3 +42,8 @@ Older installed updaters need one update to receive this menu. In their existing
 https://github.com/sacstar/darkstar-camera-viewer-updates/releases/download/v1.0.0-rc.4/latest.json
 
 Then choose Check for updates, Download update and Install update. Keep the existing app installed. After updating, choose Preview to track later candidates. The recovery preserves the new updater while restoring rc.3 camera code.
+
+
+## PWA with draggable camera layouts
+
+[PWA v0.6.0 package and instructions](pwa/README.md) includes mouse/touch camera rearrangement, a visual custom-layout editor, named copies and saved camera order/grid sizes. This is a Windows local-gateway PWA; the ZIP includes source and built files. Preserve the existing PWA `.local` vault when updating.
