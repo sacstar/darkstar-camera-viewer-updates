@@ -35,7 +35,7 @@ Candidates are marked as pre-releases and do not advance the stable update feed.
 
 The new App updates screen has Stable, Preview and Custom channels, a published-version chooser, release notes and clear download/install/recovery actions. Preview includes published pre-releases and automatically checks future candidates; Stable excludes pre-releases. Release-candidate builds default to Preview for this repository. APK signature, package, version and checksum checks still apply. Older builds cannot be installed directly over higher installation codes; use a compatible signed recovery.
 
-Publication status: v1.0.0-rc.4 is prepared and saved as a draft. Its GitHub APK assets and manifest are not yet published; the address below will become usable after publication.
+Publication status: v1.0.0-rc.4 is published as a pre-release with its signed APK, compatible recovery APK and latest.json manifest. The public downloads and SHA-256 digests have been verified. Select Preview in the new updater to discover it; Stable continues to offer v0.6.1.
 
 Older installed updaters need one update to receive this menu. In their existing update-address field, enter:
 
