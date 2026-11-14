@@ -1,3 +1,13 @@
+# Recovery and offline settings export 0.8.2-rc.1
+
+[Download Windows recovery preview](https://github.com/sacstar/darkstar-camera-viewer-updates/releases/tag/windows-v0.8.2-rc.1)
+
+File > Export sites and settings opens a native backup flow independent of the gateway. Press Alt to show File if needed. Choose sites, enter and confirm a backup passphrase locally, and choose where to save the encrypted portable backup. The original vault is read only and preserved. Run this on the computer and Windows account that owns the original settings. The recovery page also offers this export when the gateway is unavailable, including startup failures.
+
+This preview records the previously missing redacted gateway exception details in gateway-fatal.jsonl. It provides restart, diagnostic-folder, backup and update actions on a recovery page instead of leaving only a blank camera window. Startup update checks and the 0.8.1 authentication hold are retained.
+
+The reported exit-code-1 crash has NOT been identified or confirmed fixed. This is a recovery/diagnostic build so settings can be backed up and the missing exception captured. No live Blue Iris login probes were used. Validation includes 10 authentication/updater/report tests, offline native export with a stopped gateway and with an occupied startup port, unchanged-vault verification, and a nine-host packaged fixture run with socket resets/stalls/permission errors. The actual crash was not reproduced. Sidebar redesign and additional features remain separate work until the failure is understood.
+
 # Authentication hotfix 0.8.1-rc.1
 
 [Download the Windows authentication hotfix](https://github.com/sacstar/darkstar-camera-viewer-updates/releases/tag/windows-v0.8.1-rc.1)
