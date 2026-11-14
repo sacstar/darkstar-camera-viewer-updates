@@ -26,7 +26,7 @@ This is private-distribution Android software hosted through a public release re
 
 ## Private production candidate
 
-v1.0.0-rc.3 is a non-debuggable release build for private GitHub/OneDrive distribution. It retains the existing signing identity for in-place upgrades and includes unique backup filenames plus a circular PTZ pad. PTZ controls and movement requests require explicit per-camera Blue Iris PTZ support; fixed, unknown-capability and disabled cameras are excluded. Its higher-code recovery restores the previous rc.1 camera source.
+v1.0.0-rc.3 is a non-debuggable release build for private GitHub/OneDrive distribution. It retains the existing signing identity for in-place upgrades and includes unique backup filenames plus a circular PTZ pad. PTZ controls and movement requests require explicit per-camera Blue Iris PTZ support; fixed, unknown-capability and disabled cameras are excluded. Its higher-code recovery restores rc.2 camera code while retaining the new updater.
 
 Candidates are marked as pre-releases and do not advance the stable update feed. Physical phone, all-site and extended-use acceptance are required before promotion. Google Play publication is not part of this distribution path.
 
