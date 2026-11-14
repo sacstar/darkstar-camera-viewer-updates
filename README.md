@@ -26,7 +26,7 @@ This is private-distribution Android software hosted through a public release re
 
 ## Private production candidate
 
-v1.0.0-rc.3 is a non-debuggable release build for private GitHub/OneDrive distribution. It retains the existing signing identity for in-place upgrades and includes unique backup filenames plus a circular PTZ pad. PTZ controls and movement requests require explicit per-camera Blue Iris PTZ support; fixed, unknown-capability and disabled cameras are excluded. Its higher-code recovery restores rc.2 camera code while retaining the new updater.
+v1.0.0-rc.3 is prepared as a non-debuggable release build for private GitHub/OneDrive distribution. It retains the existing signing identity for in-place upgrades and includes unique backup filenames plus a circular PTZ pad. PTZ controls and movement requests require explicit per-camera Blue Iris PTZ support; fixed, unknown-capability and disabled cameras are excluded. Its higher-code recovery restores rc.2 camera code while retaining the new updater.
 
 Candidates are marked as pre-releases and do not advance the stable update feed. Physical phone, all-site and extended-use acceptance are required before promotion. Google Play publication is not part of this distribution path.
 
@@ -34,6 +34,8 @@ Candidates are marked as pre-releases and do not advance the stable update feed.
 ## Choose update channels and versions
 
 The new App updates screen has Stable, Preview and Custom channels, a published-version chooser, release notes and clear download/install/recovery actions. Preview includes published pre-releases and automatically checks future candidates; Stable excludes pre-releases. Release-candidate builds default to Preview for this repository. APK signature, package, version and checksum checks still apply. Older builds cannot be installed directly over higher installation codes; use a compatible signed recovery.
+
+Publication status: v1.0.0-rc.3 is prepared and saved as a draft. Its GitHub APK assets and manifest are not yet published; the address below will become usable after publication.
 
 Older installed updaters need one update to receive this menu. In their existing update-address field, enter:
 
