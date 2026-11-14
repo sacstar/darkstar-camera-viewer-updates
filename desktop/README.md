@@ -1,3 +1,11 @@
+# Authentication hotfix 0.8.1-rc.1
+
+[Download the Windows authentication hotfix](https://github.com/sacstar/darkstar-camera-viewer-updates/releases/tag/windows-v0.8.1-rc.1)
+
+Fixes automatic authentication retry paths that can contribute to Blue Iris IP bans. One rejected or uncertain credentialed login pauses this site's authentication across previews, streams, background reads and LAN/WAN routes. The encrypted hold survives app/gateway restart; Refresh does not bypass it. HTTP 403, unexpected media content and permission-rejected non-camera-list commands no longer trigger fresh logins. Credentialed login responses are never replayed after a transport error. Session renewal is bounded.
+
+Retains startup GitHub update checks. Review the affected site's login and Blue Iris ban status, then explicitly save its connection settings to allow one new attempt. Keep auto-ban protection enabled. The exact cause and affected sites still require Blue Iris Connections/Messages logs; development did not send live host login probes. Nine authentication/updater fixture tests passed. The sidebar redesign is being developed separately.
+
 # Darkstar Camera Viewer for Windows
 
 [Windows preview 0.8.0-rc.1 release](https://github.com/sacstar/darkstar-camera-viewer-updates/releases/tag/windows-v0.8.0-rc.1)
