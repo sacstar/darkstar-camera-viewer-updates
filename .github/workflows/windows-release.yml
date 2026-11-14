@@ -1,0 +1,75 @@
+name: Build Windows preview and publish updates
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'desktop/DarkstarCameraViewer-Windows-Source.zip'
+      - '.github/workflows/windows-release.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: windows-release
+  cancel-in-progress: false
+jobs:
+  build-and-publish:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Extract reviewed Windows source
+        shell: pwsh
+        run: |
+          Expand-Archive -LiteralPath desktop/DarkstarCameraViewer-Windows-Source.zip -DestinationPath package
+      - name: Install locked dependencies and test updater
+        shell: pwsh
+        working-directory: package/DarkstarCameraViewer-Desktop
+        run: |
+          npm ci --ignore-scripts --no-fund
+          if ($LASTEXITCODE -ne 0) { throw 'Dependency installation failed' }
+          node node_modules/electron/install.js
+          if ($LASTEXITCODE -ne 0) { throw 'Electron runtime installation failed' }
+          node --test test/*.test.cjs
+          if ($LASTEXITCODE -ne 0) { throw 'Updater tests failed' }
+      - name: Build installer
+        shell: pwsh
+        working-directory: package/DarkstarCameraViewer-Desktop
+        run: |
+          npm run dist:win
+          if ($LASTEXITCODE -ne 0) { throw 'Installer build failed' }
+      - name: Publish Windows-specific installer and update manifest
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $app = Get-Content package/DarkstarCameraViewer-Desktop/package.json -Raw | ConvertFrom-Json
+          $version = $app.version
+          $tag = 'windows-v' + $version
+          $setup = Get-Item ('outputs/Windows Desktop/Darkstar-Camera-Viewer-Setup-' + $version + '.exe')
+          $manifest = @{product='darkstar-camera-viewer-windows';version=$version;file=$setup.Name;size=$setup.Length;sha256=(Get-FileHash -LiteralPath $setup.FullName -Algorithm SHA256).Hash.ToLowerInvariant()}
+          $manifest | ConvertTo-Json | Set-Content windows-update.json -Encoding utf8NoBOM
+          $notes = 'Windows preview: fixed controls and grid-only scrolling; Ops Center and Admin pages; latest motion/person clips; health and technician/AI reports; startup GitHub updates. Remote administrative controls require an exact-site confirmation. This unsigned preview still needs real-site, physical multi-monitor and extended-use acceptance. Stitched export installs its optional upstream media runtime automatically on first use.'
+          Set-Content windows-release-notes.txt $notes -Encoding utf8NoBOM
+          gh release view $tag --repo $env:GITHUB_REPOSITORY 2>$null
+          if ($LASTEXITCODE -ne 0) {
+            if ($version.Contains('-')) {
+              gh release create $tag --repo $env:GITHUB_REPOSITORY --target $env:GITHUB_SHA --title ('Windows ' + $version) --notes-file windows-release-notes.txt --prerelease --latest=false
+            } else {
+              gh release create $tag --repo $env:GITHUB_REPOSITORY --target $env:GITHUB_SHA --title ('Windows ' + $version) --notes-file windows-release-notes.txt --latest=false
+            }
+            if ($LASTEXITCODE -ne 0) { throw 'Release creation failed' }
+          }
+          gh release upload $tag $setup.FullName windows-update.json --repo $env:GITHUB_REPOSITORY --clobber
+          if ($LASTEXITCODE -ne 0) { throw 'Release upload failed' }
+      - name: Verify real online updater download
+        shell: pwsh
+        working-directory: package/DarkstarCameraViewer-Desktop
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node test/online-release-check.cjs
+          if ($LASTEXITCODE -ne 0) { throw 'Published installer verification failed' }

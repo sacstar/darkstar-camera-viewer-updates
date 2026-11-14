@@ -1,6 +1,6 @@
 # Darkstar Camera Viewer updates
 
-Public Android release files for Darkstar Camera Viewer. This repository contains app installers, an update manifest and release notes. It does not contain saved sites, camera credentials, signing keys, camera recordings or private configuration.
+Public Android and Windows release files for Darkstar Camera Viewer. This repository contains app installers, an update manifest and release notes. It does not contain saved sites, camera credentials, signing keys, camera recordings or private configuration.
 
 ## Install and update
 
@@ -53,3 +53,7 @@ PWA v0.6.1 also fixes startup detection and the Windows Stop shortcut for gatewa
 PWA v0.7.0 adds the Darkstar Technical logo, larger grids, custom groups and independent monitor windows. See pwa/README.md for its download and validation limits.
 
 PWA v0.7.1 adds a persistent version badge and an interactive gateway repair/update tool that preserves encrypted settings and refuses to stop unrelated services.
+
+## Windows operations preview and automatic updates
+
+[Windows preview package and instructions](desktop/README.md) includes the Ops Center, Admin pages, latest clips rail, health/technician reports and startup GitHub updates. The Windows build workflow publishes its own installer/manifest and performs an online updater download check. Windows tags do not replace the Android stable feed.
