@@ -46,8 +46,10 @@ Then choose Check for updates, Download update and Install update. Keep the exis
 
 ## PWA with draggable camera layouts
 
-[PWA v0.7.0 package and instructions](pwa/README.md) includes mouse/touch camera rearrangement, a visual custom-layout editor, named copies and saved camera order/grid sizes. This is a Windows local-gateway PWA; the ZIP includes source and built files. Preserve the existing PWA `.local` vault when updating.
+[PWA v0.7.1 package and instructions](pwa/README.md) includes mouse/touch camera rearrangement, a visual custom-layout editor, named copies and saved camera order/grid sizes. This is a Windows local-gateway PWA; the ZIP includes source and built files. Preserve the existing PWA `.local` vault when updating.
 
 PWA v0.6.1 also fixes startup detection and the Windows Stop shortcut for gateway version 0.6 and later.
 
 PWA v0.7.0 adds the Darkstar Technical logo, larger grids, custom groups and independent monitor windows. See pwa/README.md for its download and validation limits.
+
+PWA v0.7.1 adds a persistent version badge and an interactive gateway repair/update tool that preserves encrypted settings and refuses to stop unrelated services.

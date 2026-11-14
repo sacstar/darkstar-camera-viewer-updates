@@ -1,13 +1,15 @@
-# Darkstar Camera Viewer PWA v0.7.0
+# Darkstar Camera Viewer PWA v0.7.1
 
-[Download updated PWA](https://github.com/sacstar/darkstar-camera-viewer-updates/raw/refs/heads/main/pwa/DarkstarCameraViewer-PWA-v0.7.0.zip)
+[Download PWA v0.7.1](https://github.com/sacstar/darkstar-camera-viewer-updates/raw/refs/heads/main/pwa/DarkstarCameraViewer-PWA-v0.7.1.zip)
 
-Includes the supplied Darkstar Technical logo, layouts with up to 1,000 cameras, 64/81/100/144-pane grids, named cross-site groups, drag ordering and independent monitor windows with auto-fit and camera-wall mode. Groups are included in encrypted settings backups. Optional browser monitor placement requires permission; manual placement remains available.
+The app header and camera-wall toolbar now show the version. The launcher detects an older running gateway and directs you to Repair-Darkstar.cmd rather than silently opening old features.
 
-Copy the extracted app files over the existing PWA folder, KEEP .local/vault.json, then run the updated Stop-Darkstar.cmd and Start-Darkstar.cmd. Source and built files are included. No saved sites or credentials are distributed.
+Extract the complete new ZIP into a separate folder. Run Repair-Darkstar.cmd there, choose Update an existing PWA folder, and select your original app folder. It makes a dated encrypted-vault backup, replaces app files and restarts the gateway while preserving saved sites, groups and layouts. Alternatively choose Restart this folder. Unrelated services are not stopped. Refresh the browser after repair.
 
-42 automated tests passed before branding; final browser checks passed for 120-camera layouts/groups, reload persistence, separate monitor windows, fullscreen and denied-permission fallback. Physical multi-monitor/DPI qualification and prolonged site testing remain pending.
+Retains the Darkstar Technical logo, layouts with up to 1,000 cameras, 64/81/100/144-pane grids, named cross-site groups, drag ordering and independent monitor windows with auto-fit and camera-wall mode. Groups are included in encrypted settings backups. Optional browser monitor placement requires permission; manual placement remains available. The Windows software edition can use native monitor discovery.
 
-The planned operations/health dashboard and expanded administration features are still under development in the desktop project; they are not included in this PWA package.
+Validation: 43 automated tests passed; browser checks passed for visible version, 120-camera layouts/groups, reload persistence, independent monitor windows, fullscreen and permission fallback. An actual running v0.6.1 gateway was upgraded to v0.7.1; the encrypted vault stayed byte-for-byte unchanged and its saved group remained readable. Repair rejected an unrelated local HTTP service without stopping it. These checks used isolated test settings. Physical multi-monitor/DPI qualification and prolonged real-site testing remain pending.
 
-SHA256: 3c6f2d4623fb46c4a04203f74fc94f05eb9e7dd8a0f42f2563e7c377bda0b1ba
+The expanded operations/health dashboard and administration features remain under development and are not included in this package. This is a Windows local-gateway PWA, not a hosted public dashboard. No private settings or camera credentials are included.
+
+SHA256: c4f695a2f4b6fc6f6d977f9e803dffe8b057864a85842756ba66d47254d9ccea
